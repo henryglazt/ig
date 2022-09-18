@@ -1,4 +1,5 @@
 const { chalk, inquirer, _, fs, instagram, print, delay } = require("./index.js");
+var moment = require("moment");
 
 (async () => {
     print(
@@ -75,6 +76,7 @@ const { chalk, inquirer, _, fs, instagram, print, delay } = require("./index.js"
                                 } else print(chalk`▼ @${media.user.username} [Media ID: ${media.pk}] ⇶ {yellow Already liked!}`);
                             })
                         );
+						console.log("Ξ Count+36  : ".bold.red + moment().format("m:s"));
                         if (i < items.length - 1) print(`Current Account: (${login.username}) » Delay: ${perExec}/${delayTime}ms \n`, "wait", true);
                         await delay(delayTime);
                     }
